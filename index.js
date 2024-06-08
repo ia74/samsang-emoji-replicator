@@ -91,7 +91,7 @@ function startBallin(seed="") {
 		seedlen = seed.split('|').length;
 		seedsplit = seed.split('|');
 		if (seedlen > LOCK_SEED_LENGTH + 1) {
-			console.log('That seed was a little too long! Cut from', seedsplit.length, 'characters to', LOCK_SEED_LENGTH)
+			console.log('That seed was a little too long! Cu;po9pt from', seedsplit.length, 'characters to', LOCK_SEED_LENGTH)
 			seedsplit.splice(LOCK_SEED_LENGTH, seedsplit.length)
 		}
 		seedsplit.forEach(no => {
@@ -137,14 +137,16 @@ function draw() {
 	raf = window.requestAnimationFrame(draw);
 }
 
+// draw()
+requestAnimationFrame(draw);
+
 canvas.addEventListener("mouseover", (e) => {
 	if (ENDED) return;
 	console.log('Started, mouse over.')
-  raf = window.requestAnimationFrame(draw);
 });
 
 canvas.addEventListener("mouseout", (e) => {
 	if (ENDED) return;
 	console.log('Paused, mouse out.')
-	window.cancelAnimationFrame(raf);
+	// window.cancelAnimationFrame(raf);
 });
